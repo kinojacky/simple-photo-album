@@ -6,7 +6,7 @@ let currentPage = 1; // Current page number, starting at 1
 // Function to load photo data from JSON file
 async function loadPhotoData() {
   try {
-    const response = await fetch("../json/photoData.json");
+    const response = await fetch("../json/sample.json");
     const data = await response.json();
     photoData = data.photos;
     renderPhotos(currentPage); // Initial render after data is loaded
@@ -34,20 +34,7 @@ function renderPhotos(page) {
     renderPagination();
 }
 
-// Add this new function to determine the aspect ratio class
-// function getAspectRatioClass(photo) {
-//   const img = new Image();
-//   img.src = photo.thumbnail;
-
-//   const ratio = img.width / img.height;
-
-//   if (ratio > 1.7) return "ratio-16-9";
-//   if (ratio < 0.8) return "portrait";
-//   if (Math.abs(ratio - 1) < 0.1) return "ratio-1-1";
-//   return ""; // Default to 4:3
-// }
-
-// Add this new function to adjust lightbox image orientation
+// Function to adjust lightbox image orientation
 function adjustLightboxOrientation(img) {
   img.onload = function () {
     const ratio = img.naturalWidth / img.naturalHeight;

@@ -1,11 +1,11 @@
 .masthead {
   height: 50vh;
   min-height: 300px;
-  background-image: url('https://placehold.co/1920x200');
+  background-image: url('../imgs/masthead_unplash.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  color: white;
+  color: #ffffff;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
@@ -74,7 +74,7 @@
 
 .close,
 .download {
-  color: white;
+  color: #ffffff;
   position: absolute;
   top: 10px;
   font-size: 30px;
@@ -94,7 +94,7 @@
   top: 22px;
   left: 50%;
   transform: translateX(-50%);
-  color: #aaa;
+  color: #aaaaaa;
 }
 
 .prev,
@@ -105,7 +105,7 @@
   width: auto;
   padding: 16px;
   margin-top: -50px;
-  color: white;
+  color: #ffffff;
   font-weight: bold;
   font-size: 2rem;
   transition: 0.6s ease;
