@@ -1,3 +1,7 @@
+i {
+  -webkit-text-stroke: 0.5px;
+}
+
 .masthead {
   height: 50vh;
   min-height: 300px;
