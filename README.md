@@ -61,7 +61,61 @@ To add your own photos, modify the `photoData.json` file in the project root dir
 
 - `thumbnail`: URL of the thumbnail image
 - `original`: URL of the full-size image
-- `filename`: Name of the file (used for download)
+- `filename` (optional): Name of the file (used for download and display in the lightbox)
+
+Example of a photo object in `photoData.json`:
+
+```json
+{
+  "thumbnail": "path/to/thumbnail.jpg",
+  "original": "path/to/original.jpg",
+  "filename": "Beautiful Sunset.jpg"
+}
+```
+
+If you don't want to include a filename for a photo, you can either omit the filename field or leave it as an empty string:
+
+```json
+{
+  "thumbnail": "path/to/thumbnail.jpg",
+  "original": "path/to/original.jpg",
+  "filename": ""
+}
+```
+
+or
+
+```json
+{
+  "thumbnail": "path/to/thumbnail.jpg",
+  "original": "path/to/original.jpg"
+}
+```
+
+## Configuration
+
+The photo album includes a configurable download option. To enable or disable downloads:
+
+1. Open the `script.js` file.
+2. Locate the `enableDownload` variable at the top of the file.
+3. Set it to `true` to enable downloads, or `false` to disable them:
+
+```javascript
+const enableDownload = true; // or false
+```
+
+When downloads are disabled:
+
+- The download button will be hidden in the lightbox
+- The 'D' key shortcut will not trigger a download
+- The usage instructions on the top will not mention the download functionality
+
+If you need to toggle this setting dynamically, you can use the `toggleDownloadFunctionality(enable)` function in your JavaScript code. For example:
+
+- To enable downloads: `toggleDownloadFunctionality(true)`
+- To disable downloads: `toggleDownloadFunctionality(false)`
+
+You can run these commands in the browser's console to toggle the download functionality on the fly.
 
 ## License
 

@@ -2,6 +2,29 @@
 let photoData = []; // Will store the photo data loaded from JSON
 const photosPerPage = 28; // Number of photos to display per page
 let currentPage = 1; // Current page number, starting at 1
+let enableDownload = false; // Set this to true to enable downloads
+
+function updateUsageInstructions() {
+  const downloadInstructionsElement = document.getElementById('download-instructions');
+  
+  if (enableDownload) {
+    downloadInstructionsElement.innerHTML = 'Use the download icon <span class="badge bg-secondary"><i class="bi bi-cloud-download"></i></span> or press <span class="badge bg-secondary">D</span> to download. ';
+    downloadInstructionsElement.style.display = 'inline';
+  } else {
+    downloadInstructionsElement.style.display = 'none';
+  }
+}
+
+// Function to toggle the download functionality dynamically
+function toggleDownloadFunctionality(enable) {
+  enableDownload = enable;
+  updateUsageInstructions();
+  // Update the lightbox if it's currently open
+  if (document.getElementById('lightbox').style.display === 'block') {
+    const currentIndex = parseInt(document.getElementById('lightbox-img').dataset.index);
+    showLightbox(currentIndex);
+  }
+}
 
 // Function to load photo data from JSON file
 async function loadPhotoData() {
@@ -17,21 +40,23 @@ async function loadPhotoData() {
 
 // Function to render photos for a specific page
 function renderPhotos(page) {
-    const photoGrid = document.getElementById('photo-grid');
-    photoGrid.innerHTML = '';
+  const photoGrid = document.getElementById("photo-grid");
+  photoGrid.innerHTML = "";
 
-    const start = (page - 1) * photosPerPage;
-    const end = start + photosPerPage;
-    const pagePhotos = photoData.slice(start, end);
+  const start = (page - 1) * photosPerPage;
+  const end = start + photosPerPage;
+  const pagePhotos = photoData.slice(start, end);
 
-    pagePhotos.forEach((photo, index) => {
-        const photoItem = document.createElement('div');
-        photoItem.className = 'col-md-3 col-6 photo-item';
-        photoItem.innerHTML = `<img src="${photo.thumbnail}" alt="${photo.filename}" class="img-fluid" data-index="${start + index}">`;
-        photoGrid.appendChild(photoItem);
-    });
+  pagePhotos.forEach((photo, index) => {
+    const photoItem = document.createElement("div");
+    photoItem.className = "col-md-3 col-6 photo-item";
+    photoItem.innerHTML = `<img src="${photo.thumbnail}" alt="${
+      photo.filename
+    }" class="img-fluid" data-index="${start + index}">`;
+    photoGrid.appendChild(photoItem);
+  });
 
-    renderPagination();
+  renderPagination();
 }
 
 // Function to adjust lightbox image orientation
@@ -86,7 +111,9 @@ function handleLightboxKeyPress(event) {
         break;
       case "d":
       case "D":
-        document.querySelector(".download").click();
+        if (enableDownload) {
+          document.querySelector(".download").click();
+        }
         break;
     }
   }
@@ -107,8 +134,17 @@ function showLightbox(index) {
   lightboxImg.src = photoData[index].original;
   lightboxImg.dataset.index = index;
   filename.textContent = photoData[index].filename;
-  downloadLink.href = photoData[index].original;
-  downloadLink.download = photoData[index].filename;
+
+  if (enableDownload) {
+    downloadLink.href = photoData[index].original;
+    downloadLink.download = photoData[index].filename;
+    downloadLink.style.display = "block";
+  } else {
+    downloadLink.removeAttribute("href");
+    downloadLink.removeAttribute("download");
+    downloadLink.style.display = "none";
+  }
+
   lightbox.style.display = "block";
 
   // Adjust lightbox image orientation
@@ -157,6 +193,7 @@ function updateLightboxNavigation(index) {
 document.addEventListener("DOMContentLoaded", () => {
   // Load photo data from JSON file
   loadPhotoData();
+  updateUsageInstructions();
 
   // Event delegation for photo grid clicks
   document.getElementById("photo-grid").addEventListener("click", (e) => {

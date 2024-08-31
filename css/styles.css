@@ -98,6 +98,11 @@ i {
   left: 1.2rem;
 }
 
+.download.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
 .filename {
   position: absolute;
   top: 22px;
