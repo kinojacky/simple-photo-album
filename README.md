@@ -10,6 +10,7 @@ A responsive, feature-rich photo album web application built with HTML, CSS, and
 - Pagination for large photo collections
 - Support for various image aspect ratios
 - Download functionality for individual photos
+- Multi-language support (5 languages)
 
 ## Technologies Used
 
@@ -17,6 +18,18 @@ A responsive, feature-rich photo album web application built with HTML, CSS, and
 - CSS3
 - JavaScript (ES6+)
 - Bootstrap 5.1.3
+
+## Languages Supported
+
+This photo album supports 5 languages:
+
+1. English (en)
+2. Traditional Chinese (zh-tw)
+3. Simplified Chinese (zh-cn)
+4. Japanese (ja)
+5. Iban (iba)
+
+Special note: The inclusion of the Iban language, native to North Borneo (Sarawak, Malaysia), demonstrates our commitment to preserving and promoting lesser-known languages. Iban is an Austronesian language spoken by the Iban people and is an important part of the cultural heritage of Borneo.
 
 ## Getting Started
 
@@ -54,6 +67,7 @@ python -m http.server 8000
 - Press 'D' to download the current photo
 - Press 'ESC' to close the lightbox
 - Use the pagination controls at the bottom of the page to navigate through the photo collection
+- Use the language dropdown to switch between supported languages
 
 ## Customization
 
@@ -121,9 +135,15 @@ You can run these commands in the browser's console to toggle the download funct
 
 This project is open source and available under the [MIT License](LICENSE).
 
+### Photo Credits
+
+All sample photos used in this project were sourced from [Unsplash](https://unsplash.com), a platform providing high-quality, freely-usable images. We extend our gratitude to the Unsplash community and the individual photographers who have made their work available for use.
+
+Please note that while the code of this project is under the MIT License, the photos are subject to the [Unsplash License](https://unsplash.com/license). This license allows for free use of the photos for commercial and non-commercial purposes, but does not allow for selling unaltered copies of the photos or using them to compete with Unsplash.
+
 ## Contributing
 
-Contributions, issues, and feature requests are welcome. Feel free to check [issues page](https://github.com/yourusername/simple-photo-album/issues) if you want to contribute.
+Contributions, issues, and feature requests are welcome. Feel free to check [issues page](https://github.com/kinojacky/simple-photo-album/issues) if you want to contribute.
 
 ## Author
 
