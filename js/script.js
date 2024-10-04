@@ -2,16 +2,71 @@
 let photoData = []; // Will store the photo data loaded from JSON
 const photosPerPage = 28; // Number of photos to display per page
 let currentPage = 1; // Current page number, starting at 1
-let enableDownload = false; // Set this to true to enable downloads
+let enableDownload = true; // Set this to true to enable downloads
+let languageData = {}; // Will store all language data
+let currentLanguage = "en"; // Default language
 
+// Available languages
+const availableLanguages = ["en", "iba", "zh-tw", "zh-cn", "ja"];
+
+// Language symbols
+const languageSymbols = {
+  "en": "Eng",
+  "iba": "Iban",
+  "zh-tw": "繁",
+  "zh-cn": "简",
+  "ja": "日",
+};
+
+// Function to load all language data
+async function loadLanguageData() {
+  try {
+    const response = await fetch("../json/languages.json");
+    languageData = await response.json();
+    updatePageLanguage();
+  } catch (error) {
+    console.error("Error loading language data:", error);
+  }
+}
+
+// Function to update page language
+function updatePageLanguage() {
+  const currentLangData = languageData[currentLanguage];
+  document.getElementById("simple-photo-album").textContent =
+    currentLangData.title;
+  document.querySelector(".masthead .col-12 p").innerHTML =
+    currentLangData.subtitle;
+  document.querySelector(".alert.alert-secondary").innerHTML = `
+    ${currentLangData.usage} ${currentLangData.viewInstructions}
+    <span id="download-instructions">${currentLangData.downloadInstructions}</span>
+    ${currentLangData.navigationInstructions} ${currentLangData.closeInstructions}
+  `;
+  document.querySelector("footer .container p").textContent =
+    currentLangData.footer;
+  updateUsageInstructions();
+}
+
+// Function to change language
+function changeLanguage(lang) {
+  if (lang && availableLanguages.includes(lang)) {
+    currentLanguage = lang;
+    updatePageLanguage();
+    document.getElementById("languageSymbol").innerHTML = languageSymbols[lang];
+  }
+}
+
+// Update the existing updateUsageInstructions function
 function updateUsageInstructions() {
-  const downloadInstructionsElement = document.getElementById('download-instructions');
-  
+  const downloadInstructionsElement = document.getElementById(
+    "download-instructions"
+  );
+
   if (enableDownload) {
-    downloadInstructionsElement.innerHTML = 'Use the download icon <span class="badge bg-secondary"><i class="bi bi-cloud-download"></i></span> or press <span class="badge bg-secondary">D</span> to download. ';
-    downloadInstructionsElement.style.display = 'inline';
+    downloadInstructionsElement.innerHTML =
+      languageData[currentLanguage].downloadInstructions;
+    downloadInstructionsElement.style.display = "inline";
   } else {
-    downloadInstructionsElement.style.display = 'none';
+    downloadInstructionsElement.style.display = "none";
   }
 }
 
@@ -19,9 +74,10 @@ function updateUsageInstructions() {
 function toggleDownloadFunctionality(enable) {
   enableDownload = enable;
   updateUsageInstructions();
-  // Update the lightbox if it's currently open
-  if (document.getElementById('lightbox').style.display === 'block') {
-    const currentIndex = parseInt(document.getElementById('lightbox-img').dataset.index);
+  if (document.getElementById("lightbox").style.display === "block") {
+    const currentIndex = parseInt(
+      document.getElementById("lightbox-img").dataset.index
+    );
     showLightbox(currentIndex);
   }
 }
@@ -146,36 +202,9 @@ function showLightbox(index) {
   }
 
   lightbox.style.display = "block";
-
-  // Adjust lightbox image orientation
   adjustLightboxOrientation(lightboxImg);
-
   updateLightboxNavigation(index);
 }
-
-// Event listener for when the DOM content is loaded
-document.addEventListener("DOMContentLoaded", () => {
-  loadPhotoData();
-
-  document.getElementById("photo-grid").addEventListener("click", (e) => {
-    if (e.target.tagName === "IMG") {
-      showLightbox(parseInt(e.target.dataset.index));
-    }
-  });
-
-  document.querySelector(".close").addEventListener("click", closeLightbox);
-
-  document.getElementById("pagination").addEventListener("click", (e) => {
-    e.preventDefault();
-    if (e.target.tagName === "A") {
-      currentPage = parseInt(e.target.dataset.page);
-      renderPhotos(currentPage);
-    }
-  });
-
-  // Add keyboard event listener
-  document.addEventListener("keydown", handleLightboxKeyPress);
-});
 
 // Function to update lightbox navigation arrows
 function updateLightboxNavigation(index) {
@@ -191,9 +220,29 @@ function updateLightboxNavigation(index) {
 
 // Event listener for when the DOM content is loaded
 document.addEventListener("DOMContentLoaded", () => {
-  // Load photo data from JSON file
-  loadPhotoData();
-  updateUsageInstructions();
+  Promise.all([loadLanguageData(), loadPhotoData()]).then(() => {
+    updatePageLanguage();
+    // Keep the translate icon on initial load
+    document.getElementById("languageSymbol").innerHTML =
+      '<i class="bi bi-translate"></i>';
+    updateUsageInstructions();
+  });
+
+  // Add event listeners for language change
+  document.querySelector(".dropdown-toggle").addEventListener("click", (e) => {
+    // Prevent changing language when clicking the dropdown toggle
+    e.preventDefault();
+  });
+
+  document.querySelectorAll(".dropdown-item").forEach((item) => {
+    item.addEventListener("click", (e) => {
+      e.preventDefault();
+      const selectedLang = e.target.getAttribute("data-lang");
+      if (selectedLang) {
+        changeLanguage(selectedLang);
+      }
+    });
+  });
 
   // Event delegation for photo grid clicks
   document.getElementById("photo-grid").addEventListener("click", (e) => {
@@ -203,9 +252,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // Event listener for closing the lightbox
-  document.querySelector(".close").addEventListener("click", () => {
-    document.getElementById("lightbox").style.display = "none";
-  });
+  document.querySelector(".close").addEventListener("click", closeLightbox);
 
   // Event delegation for pagination clicks
   document.getElementById("pagination").addEventListener("click", (e) => {
@@ -215,6 +262,9 @@ document.addEventListener("DOMContentLoaded", () => {
       renderPhotos(currentPage);
     }
   });
+
+  // Add keyboard event listener
+  document.addEventListener("keydown", handleLightboxKeyPress);
 });
 
 console.log(`

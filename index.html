@@ -15,15 +15,49 @@
     <div class="container h-100">
       <div class="row h-100 align-items-center">
         <div class="col-12 text-center">
-          <h1 class="fw-light">Simple Photo Album</h1>
+          <h1 id="simple-photo-album" class="fw-light">Simple Photo Album</h1>
           <p class="lead">Explore our collection of beautiful photos</p>
         </div>
       </div>
     </div>
   </header>
 
+  <div class="container">
+    <div class="row py-3">
+      <div class="col-12">
+        <div class="alert alert-secondary">
+          How to use? To view and interact with photos: Click an image to open the lightbox. <span id="download-instructions">Use the download icon <span class="badge bg-secondary"><i class="bi bi-cloud-download"></i></span> or press <span class="badge bg-secondary">D</span> to download. </span>Navigate with <span class="badge bg-secondary"><i class="bi bi-arrow-left"></i></span> <span class="badge bg-secondary"><i class="bi bi-arrow-right"></i></span> arrow keys or on-screen arrows. Press <span class="badge bg-secondary">Esc</span> to close.
+        </div>
+      </div>
+      <div class="col-12 text-end">
+        <div class="dropdown">
+          <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <span id="languageSymbol"><i class="bi bi-translate"></i></span>
+          </button>
+          <ul class="dropdown-menu dropdown-menu-end shadow">
+            <li class="text-center">
+              <a class="dropdown-item" href="#" onclick="changeLanguage('en')">English</a>
+            </li>
+            <li class="text-center">
+              <a class="dropdown-item" href="#" onclick="changeLanguage('iba')">Iban (N.Borneo)</a>
+            </li>
+            <li class="text-center">
+              <a class="dropdown-item" href="#" onclick="changeLanguage('zh-tw')">繁體</a>
+            </li>
+            <li class="text-center">
+              <a class="dropdown-item" href="#" onclick="changeLanguage('zh-cn')">简体</a>
+            </li>
+            <li class="text-center">
+              <a class="dropdown-item" href="#" onclick="changeLanguage('ja')">日本語</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <main class="container mb-5">
-    <div class="alert alert-secondary my-5">How to use? To view and interact with photos: Click an image to open the lightbox. <span id="download-instructions">Use the download icon <span class="badge bg-secondary"><i class="bi bi-cloud-download"></i></span> or press <span class="badge bg-secondary">D</span> to download. </span>Navigate with <span class="badge bg-secondary"><i class="bi bi-arrow-left"></i></span> <span class="badge bg-secondary"><i class="bi bi-arrow-right"></i></span> arrow keys or on-screen arrows. Press <span class="badge bg-secondary">Esc</span> to close.</div>
+    
     <div id="photo-grid" class="row px-2"></div>
     <nav aria-label="Page navigation">
       <ul class="pagination justify-content-center mt-4" id="pagination"></ul>
