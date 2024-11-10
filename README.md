@@ -147,4 +147,4 @@ Contributions, issues, and feature requests are welcome. Feel free to check [iss
 
 ## Author
 
-Jacky Brown - [Kinojacky](https://github.com/kinojacky)
+Jacky Kiu - [Kinojacky](https://github.com/kinojacky)
