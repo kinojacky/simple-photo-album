@@ -142,3 +142,18 @@ i {
 .next:hover {
   background-color: rgba(0, 0, 0, 0.8);
 }
+
+.hs-logo {
+  color: #dc3545;
+  font-weight: bold;
+  text-decoration: none;
+  transition: color 400ms;
+}
+
+.hs-logo:hover {
+  color: #d7d7d7;
+}
+
+.hs-logo .bi {
+  -webkit-text-stroke: 1px !important;
+}
