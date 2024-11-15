@@ -7,7 +7,7 @@
     "downloadInstructions": "Use the download icon <span class=\"badge bg-secondary\"><i class=\"bi bi-cloud-download\"></i></span> or press <span class=\"badge bg-secondary\">D</span> to download.",
     "navigationInstructions": "Navigate with <span class=\"badge bg-secondary\"><i class=\"bi bi-arrow-left\"></i></span> <span class=\"badge bg-secondary\"><i class=\"bi bi-arrow-right\"></i></span> arrow keys or on-screen arrows.",
     "closeInstructions": "Press <span class=\"badge bg-secondary\">Esc</span> to close.",
-    "footer": "© 2024 Simple Photo Album. All rights reserved."
+    "footer": "<a href=\"https://hirosuecloud.com\" class=\"hs-logo\"><i class=\"bi bi-chevron-left\"></i>H<i class=\"bi bi-chevron-right\"></i></a> © 2024 Simple Photo Album. All rights reserved."
   },
   "iba": {
     "title": "Album Gambar Ti Mudah",
@@ -17,7 +17,7 @@
     "downloadInstructions": "Kena ikon download <span class=\"badge bg-secondary\"><i class=\"bi bi-cloud-download\"></i></span> tauka tekan <span class=\"badge bg-secondary\">D</span> kena download.",
     "navigationInstructions": "Navigasi ngena <span class=\"badge bg-secondary\"><i class=\"bi bi-arrow-left\"></i></span> <span class=\"badge bg-secondary\"><i class=\"bi bi-arrow-right\"></i></span> kunchi anak panah tauka anak panah ba skrin.",
     "closeInstructions": "Tekan <span class=\"badge bg-secondary\">Esc</span> ngambika ulih nutup.",
-    "footer": "© 2024 Album Gambar Ti Mudah. All rights reserved."
+    "footer": "<a href=\"https://hirosuecloud.com\" class=\"hs-logo\"><i class=\"bi bi-chevron-left\"></i>H<i class=\"bi bi-chevron-right\"></i></a> © 2024 Album Gambar Ti Mudah. All rights reserved."
   },
   "zh-tw": {
     "title": "簡單相簿",
@@ -27,7 +27,7 @@
     "downloadInstructions": "使用下載圖示 <span class=\"badge bg-secondary\"><i class=\"bi bi-cloud-download\"></i></span> 或按 <span class=\"badge bg-secondary\">D</span> 鍵下載。",
     "navigationInstructions": "使用 <span class=\"badge bg-secondary\"><i class=\"bi bi-arrow-left\"></i></span> <span class=\"badge bg-secondary\"><i class=\"bi bi-arrow-right\"></i></span> 箭頭鍵或屏幕上的箭頭指示。",
     "closeInstructions": "按 <span class=\"badge bg-secondary\">Esc</span> 鍵關閉。",
-    "footer": "© 2024 簡單相簿。版權所有。"
+    "footer": "<a href=\"https://hirosuecloud.com\" class=\"hs-logo\"><i class=\"bi bi-chevron-left\"></i>H<i class=\"bi bi-chevron-right\"></i></a> © 2024 簡單相簿。版權所有。"
   },
   "zh-cn": {
     "title": "简单相册",
@@ -37,7 +37,7 @@
     "downloadInstructions": "使用下载图标 <span class=\"badge bg-secondary\"><i class=\"bi bi-cloud-download\"></i></span> 或按 <span class=\"badge bg-secondary\">D</span> 键下载。",
     "navigationInstructions": "使用 <span class=\"badge bg-secondary\"><i class=\"bi bi-arrow-left\"></i></span> <span class=\"badge bg-secondary\"><i class=\"bi bi-arrow-right\"></i></span> 箭头键或屏幕上的箭头导航。",
     "closeInstructions": "按 <span class=\"badge bg-secondary\">Esc</span> 键关闭。",
-    "footer": "© 2024 简单相册。版权所有。"
+    "footer": "<a href=\"https://hirosuecloud.com\" class=\"hs-logo\"><i class=\"bi bi-chevron-left\"></i>H<i class=\"bi bi-chevron-right\"></i></a> © 2024 简单相册。版权所有。"
   },
   "ja": {
     "title": "シンプルフォトアルバム",
@@ -47,6 +47,6 @@
     "downloadInstructions": "ダウンロードアイコン <span class=\"badge bg-secondary\"><i class=\"bi bi-cloud-download\"></i></span> を使用するか、<span class=\"badge bg-secondary\">D</span> キーを押してダウンロードします。",
     "navigationInstructions": "<span class=\"badge bg-secondary\"><i class=\"bi bi-arrow-left\"></i></span> <span class=\"badge bg-secondary\"><i class=\"bi bi-arrow-right\"></i></span> 矢印キーまたは画面上の矢印を使用してナビゲートします。",
     "closeInstructions": "<span class=\"badge bg-secondary\">Esc</span> キーを押して閉じます。",
-    "footer": "© 2024 シンプルフォトアルバム。全著作権所有。"
+    "footer": "<a href=\"https://hirosuecloud.com\" class=\"hs-logo\"><i class=\"bi bi-chevron-left\"></i>H<i class=\"bi bi-chevron-right\"></i></a> © 2024 シンプルフォトアルバム。全著作権所有。"
   }
 }

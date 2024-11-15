@@ -41,7 +41,7 @@ function updatePageLanguage() {
     <span id="download-instructions">${currentLangData.downloadInstructions}</span>
     ${currentLangData.navigationInstructions} ${currentLangData.closeInstructions}
   `;
-  document.querySelector("footer .container p").textContent =
+  document.querySelector("footer .container p").innerHTML =
     currentLangData.footer;
   updateUsageInstructions();
 }
