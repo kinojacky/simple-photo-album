@@ -43,7 +43,7 @@ Special note: The inclusion of the Iban language, native to North Borneo (Sarawa
 1. Clone the repository:
 
 ```
-git clone https://github.com/yourusername/simple-photo-album.git
+git clone https://github.com/kinojacky/simple-photo-album.git
 ```
 
 2. Navigate to the project directory:
