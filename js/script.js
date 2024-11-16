@@ -112,6 +112,11 @@ async function loadPhotoData() {
   }
 }
 
+function getBasePath() {
+  const isGitHubPages = window.location.hostname.includes("github.io");
+  return isGitHubPages ? "/simple-photo-album" : "";
+}
+
 // Function to render photos for a specific page
 function renderPhotos(page) {
   const photoGrid = document.getElementById("photo-grid");
@@ -121,10 +126,12 @@ function renderPhotos(page) {
   const end = start + photosPerPage;
   const pagePhotos = photoData.slice(start, end);
 
+  const basePath = getBasePath();
+
   pagePhotos.forEach((photo, index) => {
     const photoItem = document.createElement("div");
     photoItem.className = "col-md-3 col-6 photo-item";
-    photoItem.innerHTML = `<img src="${photo.thumbnail}" alt="${
+    photoItem.innerHTML = `<img src="${basePath}${photo.thumbnail}" alt="${
       photo.filename
     }" class="img-fluid" data-index="${start + index}">`;
     photoGrid.appendChild(photoItem);
@@ -204,13 +211,14 @@ function showLightbox(index) {
   const lightboxImg = document.getElementById("lightbox-img");
   const filename = document.querySelector(".filename");
   const downloadLink = document.querySelector(".download");
+  const basePath = getBasePath();
 
-  lightboxImg.src = photoData[index].original;
+  lightboxImg.src = `${basePath}${photoData[index].original}`;
   lightboxImg.dataset.index = index;
   filename.textContent = photoData[index].filename;
 
   if (enableDownload) {
-    downloadLink.href = photoData[index].original;
+    downloadLink.href = `${basePath}${photoData[index].original}`;
     downloadLink.download = photoData[index].filename;
     downloadLink.style.display = "block";
   } else {

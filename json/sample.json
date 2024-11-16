@@ -1,15 +1,15 @@
 {
   "photos": [
-    { "thumbnail": "../photos/thumbnail/sample_thumbnail_photo_unsplash_00001.jpg", "original": "../photos/original/sample_original_photo_unsplash_00001.jpg", "filename": "Sample_Photo_0001.jpg" },
-    { "thumbnail": "../photos/thumbnail/sample_thumbnail_photo_unsplash_00002.jpg", "original": "../photos/original/sample_original_photo_unsplash_00002.jpg", "filename": "Sample_Photo_0002.jpg" },
-    { "thumbnail": "../photos/thumbnail/sample_thumbnail_photo_unsplash_00003.jpg", "original": "../photos/original/sample_original_photo_unsplash_00003.jpg", "filename": "Sample_Photo_0003.jpg" },
-    { "thumbnail": "../photos/thumbnail/sample_thumbnail_photo_unsplash_00004.jpg", "original": "../photos/original/sample_original_photo_unsplash_00004.jpg", "filename": "Sample_Photo_0004.jpg" },
-    { "thumbnail": "../photos/thumbnail/sample_thumbnail_photo_unsplash_00005.jpg", "original": "../photos/original/sample_original_photo_unsplash_00005.jpg", "filename": "Sample_Photo_0005.jpg" },
-    { "thumbnail": "../photos/thumbnail/sample_thumbnail_photo_unsplash_00006.jpg", "original": "../photos/original/sample_original_photo_unsplash_00006.jpg", "filename": "Sample_Photo_0006.jpg" },
-    { "thumbnail": "../photos/thumbnail/sample_thumbnail_photo_unsplash_00007.jpg", "original": "../photos/original/sample_original_photo_unsplash_00007.jpg", "filename": "Sample_Photo_0007.jpg" },
-    { "thumbnail": "../photos/thumbnail/sample_thumbnail_photo_unsplash_00008.jpg", "original": "../photos/original/sample_original_photo_unsplash_00008.jpg", "filename": "Sample_Photo_0008.jpg" },
-    { "thumbnail": "../photos/thumbnail/sample_thumbnail_photo_unsplash_00009.jpg", "original": "../photos/original/sample_original_photo_unsplash_00009.jpg", "filename": "Sample_Photo_0009.jpg" },
-    { "thumbnail": "../photos/thumbnail/sample_thumbnail_photo_unsplash_00010.jpg", "original": "../photos/original/sample_original_photo_unsplash_00010.jpg", "filename": "Sample_Photo_0010.jpg" }
+    { "thumbnail": "/photos/thumbnail/sample_thumbnail_photo_unsplash_00001.jpg", "original": "/photos/original/sample_original_photo_unsplash_00001.jpg", "filename": "Sample_Photo_0001.jpg" },
+    { "thumbnail": "/photos/thumbnail/sample_thumbnail_photo_unsplash_00002.jpg", "original": "/photos/original/sample_original_photo_unsplash_00002.jpg", "filename": "Sample_Photo_0002.jpg" },
+    { "thumbnail": "/photos/thumbnail/sample_thumbnail_photo_unsplash_00003.jpg", "original": "/photos/original/sample_original_photo_unsplash_00003.jpg", "filename": "Sample_Photo_0003.jpg" },
+    { "thumbnail": "/photos/thumbnail/sample_thumbnail_photo_unsplash_00004.jpg", "original": "/photos/original/sample_original_photo_unsplash_00004.jpg", "filename": "Sample_Photo_0004.jpg" },
+    { "thumbnail": "/photos/thumbnail/sample_thumbnail_photo_unsplash_00005.jpg", "original": "/photos/original/sample_original_photo_unsplash_00005.jpg", "filename": "Sample_Photo_0005.jpg" },
+    { "thumbnail": "/photos/thumbnail/sample_thumbnail_photo_unsplash_00006.jpg", "original": "/photos/original/sample_original_photo_unsplash_00006.jpg", "filename": "Sample_Photo_0006.jpg" },
+    { "thumbnail": "/photos/thumbnail/sample_thumbnail_photo_unsplash_00007.jpg", "original": "/photos/original/sample_original_photo_unsplash_00007.jpg", "filename": "Sample_Photo_0007.jpg" },
+    { "thumbnail": "/photos/thumbnail/sample_thumbnail_photo_unsplash_00008.jpg", "original": "/photos/original/sample_original_photo_unsplash_00008.jpg", "filename": "Sample_Photo_0008.jpg" },
+    { "thumbnail": "/photos/thumbnail/sample_thumbnail_photo_unsplash_00009.jpg", "original": "/photos/original/sample_original_photo_unsplash_00009.jpg", "filename": "Sample_Photo_0009.jpg" },
+    { "thumbnail": "/photos/thumbnail/sample_thumbnail_photo_unsplash_00010.jpg", "original": "/photos/original/sample_original_photo_unsplash_00010.jpg", "filename": "Sample_Photo_0010.jpg" }
   ]
 }
 
