@@ -21,7 +21,7 @@ const languageSymbols = {
 // Function to load all language data
 async function loadLanguageData() {
   try {
-    const response = await fetch("../json/languages.json");
+    const response = await fetch("/json/languages.json");
     languageData = await response.json();
     updatePageLanguage();
   } catch (error) {
@@ -85,7 +85,7 @@ function toggleDownloadFunctionality(enable) {
 // Function to load photo data from JSON file
 async function loadPhotoData() {
   try {
-    const response = await fetch("../json/sample.json");
+    const response = await fetch("/json/sample.json");
     const data = await response.json();
     photoData = data.photos;
     renderPhotos(currentPage); // Initial render after data is loaded
