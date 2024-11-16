@@ -21,7 +21,16 @@ const languageSymbols = {
 // Function to load all language data
 async function loadLanguageData() {
   try {
-    const response = await fetch("/json/languages.json");
+    // Check if we're on GitHub Pages
+    const isGitHubPages = window.location.hostname.includes("github.io");
+
+    // Construct the appropriate path
+    const basePath = isGitHubPages ? "/simple-photo-album" : "";
+    const jsonUrl = `${basePath}/json/languages.json`;
+
+    // console.log("Attempting to fetch from:", jsonUrl); // For debugging
+
+    const response = await fetch(jsonUrl);
     languageData = await response.json();
     updatePageLanguage();
   } catch (error) {
@@ -85,7 +94,16 @@ function toggleDownloadFunctionality(enable) {
 // Function to load photo data from JSON file
 async function loadPhotoData() {
   try {
-    const response = await fetch("/json/sample.json");
+    // Check if we're on GitHub Pages
+    const isGitHubPages = window.location.hostname.includes("github.io");
+
+    // Construct the appropriate path
+    const basePath = isGitHubPages ? "/simple-photo-album" : "";
+    const jsonUrl = `${basePath}/json/sample.json`;
+
+    // console.log("Attempting to fetch from:", jsonUrl); // For debugging
+
+    const response = await fetch(jsonUrl);
     const data = await response.json();
     photoData = data.photos;
     renderPhotos(currentPage); // Initial render after data is loaded
